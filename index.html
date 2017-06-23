@@ -1,0 +1,74 @@
+<html>
+  <!DOCTYPE html>
+  <head>
+    <script>
+
+    window.addEventListener("load", function(){
+
+        var index = 1;
+
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var card = document.getElementById("card_img");
+
+
+
+
+        prev.addEventListener("click", function(){
+          index--;
+          setCardNumber(index)
+        })
+
+        next.addEventListener("click", function(){
+            index++;
+            setCardNumber(index)
+        })
+
+        card.addEventListener("click", function(){
+          card.setAttribute("src","cards/ruby/Ruby_A"+index+".png")
+        })
+
+
+        function setCardNumber(num){
+          card.setAttribute("src","cards/ruby/Ruby_Q"+num+".png")
+        }
+
+        setCardNumber(1)
+
+    })
+
+    </script>
+    <style media="screen">
+        body{
+          background: #292C33;
+        }
+        .content{
+          margin: 0 auto;
+          width: 400px;
+        }
+        .card{
+          width:400px;
+          height: auto;
+        }
+        .button_container{
+          width: 220px;
+          margin: 20px auto;
+
+        }
+        button{
+          width: 100px;
+        }
+    </style>
+  </head>
+  <body>
+
+      <div class="content">
+        <img id="card_img" class="card" />
+        <div class="button_container">
+          <button id="prev">Previous</button>
+          <button id="next">Next</button>
+        </div>
+      </div>
+
+  </body>
+</html>
